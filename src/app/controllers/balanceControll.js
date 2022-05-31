@@ -1,11 +1,11 @@
 const express = require('express');
 
 // Importação de funções uteis 
-const checkEmptyFields = require('../../../utils/checkEmptyFields');
-const concatenateOperator = require('../../../utils/concatenateOperator');
+const checkEmptyFields = require('../../utils/checkEmpyFields');
+const concatenateOperator = require('../../utils/concatenateOperator');
 
 // Model import
-const Expense = require('../../models/Expense');
+const Expense = require('../../app/models/Expense');
 
 const router = express.Router();
 
