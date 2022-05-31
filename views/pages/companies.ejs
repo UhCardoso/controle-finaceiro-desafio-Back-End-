@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/companies.css"/>
+    <title></title>
+</head>
+<body>
+    <div class="info">
+        <h2>Informações das empresas na bolsa de valores</h2>
+        <p>Veja agora qual o código da empresa que você  mais adimira.</p>
+        <p>Com o código dela você pode se tornar um acionista dela e ganhar dinheiro recebendo dividendos.</p>
+        <p>Basta usar uma plataforma de investimentos e pesquisar pelo código da empresa para você se tornar um "sócio" dela!</p>
+    </div>
+    <ul>
+        <% 
+            companies.forEach((companie)=> { %>
+            <li>
+                <p>Nome da empresa: <%= companie.nm_empresa %></p>
+                <p>Codigo da ação: <span style="color: blue;"><%= companie.cd_acao %></span></p>
+                <p>Setor econômico: <%= companie.setor_economico %></p>
+                <p>Atividade: <%= companie.segmento %></p>
+            </li> 
+        <% }) %>
+    </ul>
+</body>
+</html>

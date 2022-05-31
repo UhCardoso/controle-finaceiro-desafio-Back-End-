@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/index.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Controle de Saldo</title>
+</head>
+<body>
+    <%  
+        // Calcular valor saldo
+        let values = expenses.map((expense)=> {
+            return expense.value
+        })
+        let balance = values.reduce((accumulator, number) => accumulator + number, 0).toFixed(2);
+        
+        // Calcular valor total despesas
+        let expensesFilters = values.filter(value => value < 0);
+        let expensesArray = expensesFilters.reduce((accumulator, number) => accumulator + number, 0).toFixed(2);
+
+        // Calcular valor total receitas
+        let revenuesFilters = values.filter(value => value > 0);
+        let revenuesArray = revenuesFilters.reduce((accumulator, number) => accumulator + number, 0).toFixed(2);
+    %>
+
+    <div class="container">
+        <h1>CONTROLE DE SALDO</h1>
+        <div class="area-topo">
+            <div class="area-saldo">
+                <h3>Saldo atual</h3>
+                <h2>R$ <%= balance %></h2>
+            </div>
+            <div class="area-receita-despesa">
+                <div class="area-receita">
+                    <h3>RECEITAS</h3>
+                    <h4>R$ <%= revenuesArray %></h4>
+                </div>
+                <div class="area-despesa">
+                    <h3>DESPESAS</h3>
+                    <h4>R$ <%= Math.abs(expensesArray).toFixed(2) %></h4>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="area-transacoes">
+            <h3>Transações</h3>
+            <ul class="area-lista">
+                <% 
+                    let reverseExpenses = expenses.reverse();
+                    reverseExpenses.forEach((expense)=> { %>
+                    <li >
+                        <form method="POST" action="/delete/<%= expense.id %>">
+                            <input type="hidden" name="id" value='<%= expense.id %>' />
+                            <button type="submit"><span class="material-symbols-outlined">
+                                                        close
+                                                    </span></button>
+                        </form>
+                    
+                        <p><%= expense.name %></p>
+                        <% if(expense.value < 0){ %>
+                            <span style="color: red;">- R$ <%= Math.abs(expense.value) %></span>
+                        <% } else{ %>  
+                            <span style="color: green;">+ R$ <%= Math.abs(expense.value) %></span>
+                        <% } %>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="area-add-transacao">
+            <h3>Adicionar Transação</h3>
+            <form method="POST" action="/create">
+                <input type="text" name="name" placeholder="Nome da transação"/>
+                <input type="text" name="value" placeholder="Valor da transação"/>
+                <select name="operator">
+                    <option value="">Selecionar tipo transação</option>
+                    <option value="-">Despesa</option>
+                    <option value="+">Receita</option>
+                </select>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
