@@ -1,0 +1,102 @@
+body {
+    background-color: #21C25E;
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.area-topo {
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #000;
+}
+.area-saldo h2 {
+    color: blue;
+}
+.area-receita-despesa {
+    border-top: 1px solid #B8B8B8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.area-receita h4 {
+    font-size: 1.2rem;
+    color: green;
+    font-weight: bold;
+}
+.area-despesa h4 {
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+}
+
+.area-transacoes {
+    text-align: left;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #B8B8B8;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+button {
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+p {
+    font-size: 1.1rem;
+}
+
+.area-add-transacao {
+    width: 100%;
+}
+.area-add-transacao form {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    width: 100%;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+.area-add-transacao input {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #B8B8B8;
+}
+.area-add-transacao select {
+    font-size: 1.2rem;
+    border: none;
+}
+.area-add-transacao button {
+    margin-top: 5px;
+    width: 35%;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
