@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Importação de funções uteis 
-const checkEmptyFields = require('../../utils/checkEmptyFields');
+const checkEmptyFields = require('../../utils/checkEmpyFields');
 const concatenateOperator = require('../../utils/concatenateOperator');
 
 // Model import
