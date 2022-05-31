@@ -9,13 +9,13 @@ Esta aplicaçãofronecem dois tipos de retorno: uma renderização dos elementos
 O EJS é um tamplate Engine que da o poder de usarmos funcionalidades do Java Script dentro do DOM html, para que possamos tratar os dados de retorno dinamicamente.
 
 ### Preparando ambiente para executar projeto
-1 - Tenha o node instalado na maquina [baixe aqui](https://nodejs.org/en/download/)
-2 - Tenha o MySql instalado [baixe aqui](https://www.mysql.com/downloads/)
-3 - Dê o git clone deste projeto
-4 - Entre na pasta baixada e use o comando "npm install" para instalar todas as dependencias do projeto.
-5 - na pasta src/database abra o arquivo index.js e troque o usuario e a senha do MySql pelo usuario e senha que vc criou na hora da instalação do MySql;
-6 - Na raiz do projeto dê um "npm run start" para iniciar o servidor da aplicação
-7 - Acesse o endereço "http://localhost:3132/" no seu navegador para olhar o funcionamento da aplicação.
+1. - Tenha o node instalado na maquina [baixe aqui](https://nodejs.org/en/download/)
+2. - Tenha o MySql instalado [baixe aqui](https://www.mysql.com/downloads/)
+3. - Dê o git clone deste projeto
+4. - Entre na pasta baixada e use o comando "npm install" para instalar todas as dependencias do projeto.
+5. - na pasta src/database abra o arquivo index.js e troque o usuario e a senha do MySql pelo usuario e senha que vc criou na hora da instalação do MySql;
+6. - Na raiz do projeto dê um "npm run start" para iniciar o servidor da aplicação
+7. - Acesse o endereço "http://localhost:3132/" no seu navegador para olhar o funcionamento da aplicação.
 
 Mas caso prefira consumir a api, siga os passos abaixo.
 
