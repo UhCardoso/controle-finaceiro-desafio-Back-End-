@@ -4,8 +4,10 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: false}));
+// View engine config
+app.set('view engine', 'ejs');
+app.set('views', './views')
+app.use(express.static('public'));
 
 // Cors config
 app.use((req, res, next) => {
